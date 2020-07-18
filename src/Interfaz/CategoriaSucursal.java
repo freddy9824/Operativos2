@@ -4,7 +4,6 @@
  * and open the template in the editor.
  */
 package Interfaz;
-
 /**
  *
  * @author Felix Castillo
@@ -14,8 +13,13 @@ public class CategoriaSucursal extends javax.swing.JFrame {
     /**
      * Creates new form Gama
      */
+    
+    
+    
     public CategoriaSucursal() {
         initComponents();
+        setLocationRelativeTo(this);
+        setVisible(true);
     }
 
     /**
