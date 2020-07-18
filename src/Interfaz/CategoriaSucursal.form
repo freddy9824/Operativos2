@@ -73,7 +73,7 @@
   <SubComponents>
     <Component class="javax.swing.JLabel" name="jLabel1">
       <Properties>
-        <Property name="text" type="java.lang.String" value="Matriz Categoria / Subcursal"/>
+        <Property name="text" type="java.lang.String" value="Matriz Categor&#xed;a / Sucursal"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JTextField" name="Categoria">
@@ -93,12 +93,12 @@
     </Component>
     <Component class="javax.swing.JLabel" name="jLabel2">
       <Properties>
-        <Property name="text" type="java.lang.String" value="Categorias (Columns)"/>
+        <Property name="text" type="java.lang.String" value="Categor&#xed;as (Columns)"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JLabel" name="jLabel3">
       <Properties>
-        <Property name="text" type="java.lang.String" value="Subcursales (rows)"/>
+        <Property name="text" type="java.lang.String" value="Sucursales (rows)"/>
       </Properties>
     </Component>
   </SubComponents>

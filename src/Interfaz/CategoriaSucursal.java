@@ -9,12 +9,12 @@ package Interfaz;
  *
  * @author Felix Castillo
  */
-public class CategoriaSubcursal extends javax.swing.JFrame {
+public class CategoriaSucursal extends javax.swing.JFrame {
 
     /**
      * Creates new form Gama
      */
-    public CategoriaSubcursal() {
+    public CategoriaSucursal() {
         initComponents();
     }
 
@@ -36,7 +36,7 @@ public class CategoriaSubcursal extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jLabel1.setText("Matriz Categoria / Subcursal");
+        jLabel1.setText("Matriz Categoría / Sucursal");
 
         Categoria.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -51,9 +51,9 @@ public class CategoriaSubcursal extends javax.swing.JFrame {
             }
         });
 
-        jLabel2.setText("Categorias (Columns)");
+        jLabel2.setText("Categorías (Columns)");
 
-        jLabel3.setText("Subcursales (rows)");
+        jLabel3.setText("Sucursales (rows)");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -126,14 +126,18 @@ public class CategoriaSubcursal extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(CategoriaSubcursal.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(CategoriaSucursal.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(CategoriaSubcursal.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(CategoriaSucursal.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(CategoriaSubcursal.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(CategoriaSucursal.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(CategoriaSubcursal.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(CategoriaSucursal.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
         //</editor-fold>
         //</editor-fold>
         //</editor-fold>
@@ -142,7 +146,7 @@ public class CategoriaSubcursal extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new CategoriaSubcursal().setVisible(true);
+                new CategoriaSucursal().setVisible(true);
             }
         });
     }
