@@ -58,7 +58,7 @@ public class GamaBanquero {
 		}
 
 		// Get available matrix input
-		System.out.println("Por favor introduce la matriz =>");
+		System.out.println("Por favor la cantidad requerida de empleados en cada categoría =>");
 		for (int j = 0; j < num_resources; j++)
 			available_resources[0][j] = scanner.nextInt(); // available matrix
 		
