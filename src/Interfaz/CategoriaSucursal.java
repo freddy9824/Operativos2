@@ -5,6 +5,8 @@
  */
 package Interfaz;
 
+import gamabanquero.Lógica;
+
 /**
  *
  * @author Felix Castillo
@@ -13,8 +15,12 @@ public class CategoriaSucursal extends javax.swing.JFrame {
 
     /**
      * Creates new form Gama
+     * @param logica
      */
-    public CategoriaSucursal() {
+    public Lógica logica;
+    
+    public CategoriaSucursal(Lógica logica) {
+        this.logica = logica;
         initComponents();
     }
 
@@ -146,7 +152,6 @@ public class CategoriaSucursal extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new CategoriaSucursal().setVisible(true);
             }
         });
     }
