@@ -126,7 +126,22 @@ public class CategoriaSucursal extends javax.swing.JFrame {
         logica.available_resources = new int[1][num_resources];
         setVisible(false);
         String aux;
-        JOptionPane.showMessageDialog(rootPane, "Por favor introduce la matriz de empleados asignados en cada sucursal actualmente en cada categoría");
+        
+        // Get Max Matrix input
+	JOptionPane.showMessageDialog(rootPane, "Por favor introduce la matriz de empleados requeridos en cada sucursal en cada una de sus categorías");
+	for (int i = 0; i < num_processes; i++) {
+            JOptionPane.showMessageDialog(rootPane, "Usted esta llenando los valores de Sucursal " + (i + 1) + " (P" + i + "): ");
+            for (int j = 0; j < num_resources; j++) {
+                                aux = JOptionPane.showInputDialog("Colocar número");
+                                if (aux == null) {
+                                    JOptionPane.showMessageDialog(null, "Recuadro Vacio o Presionado Botón cancelar, se ha iniciado el cierre del programa", "Aviso!", JOptionPane.ERROR_MESSAGE);
+                                    System.exit(0);
+                                }
+                                logica.max[i][j] = Integer.parseInt(aux); // max matrix
+            }
+	}
+        
+        JOptionPane.showMessageDialog(rootPane, "Por favor introduce la matriz de empleados iniciales en cada categoría al abrir la sucursal");
         for (int i = 0; i < num_processes; i++) {
             JOptionPane.showMessageDialog(rootPane, "Usted esta llenando los valores de la Sucursal " + (i + 1) + " (P" + i + "): ");
             for (int j = 0; j < num_resources; j++) {
@@ -136,24 +151,11 @@ public class CategoriaSucursal extends javax.swing.JFrame {
                     System.exit(0);
                 }
                 logica.allocated_resources[i][j] = Integer.parseInt(aux); // allocation matrix
-	}
+            }
         }
-        	// Get Max Matrix input
-	JOptionPane.showMessageDialog(rootPane, "Por favor introduce la matriz de empleados disponibles que puedan transportarse en cada categoría");
-	for (int i = 0; i < num_processes; i++) {
-		JOptionPane.showMessageDialog(rootPane, "Usted esta llenando los valores de Sucursal " + (i + 1) + " (P" + i + "): ");
-		for (int j = 0; j < num_resources; j++) {
-                                    aux = JOptionPane.showInputDialog("Colocar número");
-                                    if (aux == null) {
-                                        JOptionPane.showMessageDialog(null, "Recuadro Vacio o Presionado Botón cancelar, se ha iniciado el cierre del programa", "Aviso!", JOptionPane.ERROR_MESSAGE);
-                                        System.exit(0);
-                                    }
-                                    logica.max[i][j] = Integer.parseInt(aux); // max matrix
-		}
-	}
 
 	// Get available matrix input
-	JOptionPane.showMessageDialog(rootPane, "Por favor la cantidad requerida de empleados en cada categoría");
+	JOptionPane.showMessageDialog(rootPane, "Por favor introduzca la cantidad de empleados disponibles en cada categoría");
 	for (int j = 0; j < num_resources; j++) {
                     aux = JOptionPane.showInputDialog("Colocar número");
                     if (aux == null) {
