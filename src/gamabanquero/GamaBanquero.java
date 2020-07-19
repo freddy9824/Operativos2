@@ -8,7 +8,6 @@ package gamabanquero;
 import java.util.Scanner;
 
 import Interfaz.CategoriaSucursal;
-import Interfaz.Empleados;
 
 /**
  *
@@ -17,7 +16,7 @@ import Interfaz.Empleados;
 public class GamaBanquero {
 
     public static void main(String[] args) {
-        Lógica logica = new Lógica();
+        Logica logica = new Logica();
         CategoriaSucursal categoriaSucursal = new CategoriaSucursal(logica);
         
         logica.revisarInterbloqueo();

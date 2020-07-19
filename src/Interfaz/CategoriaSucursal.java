@@ -5,7 +5,8 @@
  */
 package Interfaz;
 
-import gamabanquero.Lógica;
+import gamabanquero.Logica;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -17,9 +18,9 @@ public class CategoriaSucursal extends javax.swing.JFrame {
      * Creates new form Gama
      * @param logica
      */
-    public Lógica logica;
+    public Logica logica;
     
-    public CategoriaSucursal(Lógica logica) {
+    public CategoriaSucursal(Logica logica) {
         this.logica = logica;
         initComponents();
         setLocationRelativeTo(this);
@@ -113,8 +114,49 @@ public class CategoriaSucursal extends javax.swing.JFrame {
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
-        int columns = Integer.parseInt(Subcursales.getText());
-        int rows = Integer.parseInt(Categoria.getText());
+        int num_processes = Integer.parseInt(Subcursales.getText());
+        int num_resources = Integer.parseInt(Categoria.getText());
+        logica.need = new int[num_processes][num_resources];
+        logica.max = new int[num_processes][num_resources];
+        logica.allocated_resources = new int[num_processes][num_resources];
+        logica.available_resources = new int[1][num_resources];
+        setVisible(false);
+        String aux;
+        JOptionPane.showMessageDialog(rootPane, "Por favor introduce la matriz de empleados asignados en cada sucursal actualmente en cada categoría");
+        for (int i = 0; i < num_processes; i++) {
+            JOptionPane.showMessageDialog(rootPane, "Usted esta llenando los valores de Row " + (i + 1) + " (P" + i + "): ");
+            for (int j = 0; j < num_resources; j++) {
+                aux = JOptionPane.showInputDialog("Colocar Numero");
+                if (aux == null) {
+                    System.exit(0);
+                }
+                logica.allocated_resources[i][j] = Integer.parseInt(aux); // allocation matrix
+	}
+        }
+        	// Get Max Matrix input
+	JOptionPane.showMessageDialog(rootPane, "Por favor introduce la matriz de empleados disponibles que puedan transportarse en cada categoría");
+	for (int i = 0; i < num_processes; i++) {
+		JOptionPane.showMessageDialog(rootPane, "Usted esta llenando los valores de Row " + (i + 1) + " (P" + i + "): ");
+		for (int j = 0; j < num_resources; j++) {
+                                    aux = JOptionPane.showInputDialog("Colocar Numero");
+                                    if (aux == null) {
+                                        System.exit(0);
+                                    }
+                                    logica.max[i][j] = Integer.parseInt(aux); // max matrix
+		}
+	}
+
+	// Get available matrix input
+	JOptionPane.showMessageDialog(rootPane, "Por favor la cantidad requerida de empleados en cada categoría");
+	for (int j = 0; j < num_resources; j++) {
+                    aux = JOptionPane.showInputDialog("Colocar Numero");
+                    if (aux == null) {
+                                        System.exit(0);
+                    }
+                    logica.available_resources[0][j] = Integer.parseInt(aux); // available matrix
+                 }
+		
+		
     }//GEN-LAST:event_jButton1ActionPerformed
 
     /**
