@@ -16,6 +16,8 @@ public class Orden extends javax.swing.JFrame {
      */
     public Orden() {
         initComponents();
+        setLocationRelativeTo(this);
+        setTitle("Orden de Asignación de Empleados");
     }
 
     /**

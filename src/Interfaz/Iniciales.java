@@ -16,6 +16,8 @@ public class Iniciales extends javax.swing.JFrame {
      */
     public Iniciales() {
         initComponents();
+        setLocationRelativeTo(this);
+        setTitle("Empleados Iniciales");
     }
 
     /**

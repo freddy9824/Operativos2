@@ -16,6 +16,8 @@ public class Necesario extends javax.swing.JFrame {
      */
     public Necesario() {
         initComponents();
+        setLocationRelativeTo(this);
+        setTitle("Resta de Matrices: Requerido - Asignado");
     }
 
     /**
