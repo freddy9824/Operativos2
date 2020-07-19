@@ -4,6 +4,9 @@
  * and open the template in the editor.
  */
 package Interfaz;
+
+import gamabanquero.Lógica;
+
 /**
  *
  * @author Felix Castillo
@@ -12,11 +15,12 @@ public class CategoriaSucursal extends javax.swing.JFrame {
 
     /**
      * Creates new form Gama
+     * @param logica
      */
+    public Lógica logica;
     
-    
-    
-    public CategoriaSucursal() {
+    public CategoriaSucursal(Lógica logica) {
+        this.logica = logica;
         initComponents();
         setLocationRelativeTo(this);
         setVisible(true);
@@ -150,7 +154,6 @@ public class CategoriaSucursal extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new CategoriaSucursal().setVisible(true);
             }
         });
     }
