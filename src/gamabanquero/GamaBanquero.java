@@ -18,7 +18,5 @@ public class GamaBanquero {
     public static void main(String[] args) {
         Logica logica = new Logica();
         CategoriaSucursal categoriaSucursal = new CategoriaSucursal(logica);
-        
-        logica.revisarInterbloqueo();
     }
 }

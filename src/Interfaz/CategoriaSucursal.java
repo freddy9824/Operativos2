@@ -176,7 +176,7 @@ public class CategoriaSucursal extends javax.swing.JFrame {
               necesario.setVisible(true);
               logica.imprimirArray(orden.jTextArea1, logica.order);
               orden.setVisible(true);
-		
+	logica.revisarInterbloqueo();	
     }//GEN-LAST:event_jButton1ActionPerformed
 
     /**

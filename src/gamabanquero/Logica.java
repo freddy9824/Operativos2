@@ -6,6 +6,7 @@
 package gamabanquero;
 
 import java.util.Scanner;
+import javax.swing.JOptionPane;
 import javax.swing.JTextArea;
 
 /**
@@ -120,9 +121,9 @@ public class Logica {
                                 break;
 		}
 		if (j == num_processes) // all processes are allocated
-			System.out.println("\n¡EXISTE ESTADO SEGURO!");
+			JOptionPane.showMessageDialog(null,"¡EXISTE ESTADO SEGURO!","Aviso!", JOptionPane.INFORMATION_MESSAGE);
 		else
-			System.out.println("DEADLOCK");
+			JOptionPane.showMessageDialog(null,"DEADLOCK","Aviso!", JOptionPane.ERROR_MESSAGE);
 	}
         public void imprimirEnInterfaz(JTextArea area, int [][] matriz) {
             String text = "\n" + "\n" + "\n";
