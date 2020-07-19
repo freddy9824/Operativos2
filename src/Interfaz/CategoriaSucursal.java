@@ -119,11 +119,22 @@ public class CategoriaSucursal extends javax.swing.JFrame {
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
         int num_processes = Integer.parseInt(Subcursales.getText());
+        while (num_processes < 6) {
+           String aux = JOptionPane.showInputDialog(null,"Minimo de sucursales 6","Aviso!", JOptionPane.ERROR_MESSAGE);
+            if (aux == null || aux.isEmpty()) {
+                JOptionPane.showMessageDialog(null, "Recuadro Vacio o Presionado Botón cancelar, se ha iniciado el cierre del programa", "Aviso!", JOptionPane.ERROR_MESSAGE);
+                System.exit(0);
+            }
+            num_processes = Integer.parseInt(aux);
+        }
+        logica.sucursales = new String[num_processes];
+        logica.imprimirSucursales(num_processes, logica.sucursales);
         int num_resources = Integer.parseInt(Categoria.getText());
         logica.need = new int[num_processes][num_resources];
         logica.max = new int[num_processes][num_resources];
         logica.allocated_resources = new int[num_processes][num_resources];
         logica.available_resources = new int[1][num_resources];
+        
         setVisible(false);
         String aux;
         
@@ -133,7 +144,7 @@ public class CategoriaSucursal extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(rootPane, "Usted esta llenando los valores de Sucursal " + (i + 1) + " (P" + i + "): ");
             for (int j = 0; j < num_resources; j++) {
                                 aux = JOptionPane.showInputDialog("Colocar número");
-                                if (aux == null) {
+                                if (aux == null || aux.isEmpty()) {
                                     JOptionPane.showMessageDialog(null, "Recuadro Vacio o Presionado Botón cancelar, se ha iniciado el cierre del programa", "Aviso!", JOptionPane.ERROR_MESSAGE);
                                     System.exit(0);
                                 }
@@ -146,7 +157,7 @@ public class CategoriaSucursal extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(rootPane, "Usted esta llenando los valores de la Sucursal " + (i + 1) + " (P" + i + "): ");
             for (int j = 0; j < num_resources; j++) {
                 aux = JOptionPane.showInputDialog("Colocar número");
-                if (aux == null) {
+                if (aux == null || aux.isEmpty()) {
                     JOptionPane.showMessageDialog(null, "Recuadro Vacio o Presionado Botón cancelar, se ha iniciado el cierre del programa", "Aviso!", JOptionPane.ERROR_MESSAGE);
                     System.exit(0);
                 }
@@ -158,7 +169,7 @@ public class CategoriaSucursal extends javax.swing.JFrame {
 	JOptionPane.showMessageDialog(rootPane, "Por favor introduzca la cantidad de empleados disponibles en cada categoría");
 	for (int j = 0; j < num_resources; j++) {
                     aux = JOptionPane.showInputDialog("Colocar número");
-                    if (aux == null) {
+                    if (aux == null || aux.isEmpty()) {
                         JOptionPane.showMessageDialog(null, "Recuadro Vacio o Presionado Botón cancelar, se ha iniciado el cierre del programa", "Aviso!", JOptionPane.ERROR_MESSAGE);
                          System.exit(0);
                     }
@@ -175,9 +186,9 @@ public class CategoriaSucursal extends javax.swing.JFrame {
               requerido.setVisible(true);
               logica.imprimirEnInterfaz(inicial.jTextArea1, logica.allocated_resources);
               inicial.setVisible(true);
-              logica.imprimirEnInterfaz(necesario.necesario, logica.allocated_resources);
+              logica.imprimirEnInterfaz(necesario.necesario, logica.need);
               necesario.setVisible(true);
-              logica.imprimirArray(orden.jTextArea1, logica.order);
+              logica.imprimirArray(orden.jTextArea1, logica.order ,logica.sucursales);
               orden.setVisible(true);
               logica.revisarInterbloqueo();	
     }//GEN-LAST:event_jButton1ActionPerformed

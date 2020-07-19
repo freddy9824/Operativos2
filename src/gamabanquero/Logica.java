@@ -21,6 +21,7 @@ public class Logica {
         public static int num_processes;
         public static int num_resources;
         public static int order[];
+        public static String sucursales[];
         
         public static void obtenerDatos() {
 	Scanner scanner = new Scanner(System.in);
@@ -136,10 +137,37 @@ public class Logica {
             area.setText(text);
         }
         
-        public void imprimirArray(JTextArea area, int[] vector) {
+        public void imprimirArray(JTextArea area,int[]vector ,String[]vector2) {
             String text = "\n" + "\n" + "\n";
             for (int i = 0; i < vector.length; i++) {
                 text += "\t" + vector[i];
             }
+            text += "\n" + "\n" + "Leyenda: ";
+            for (int i = 0; i < vector2.length; i++) {
+                text +=  "\n" + vector2[i];
+            }
         }
-}
+        
+        public void imprimirSucursales(int sucursales, String[] imprimir) {
+            if (sucursales == 6) {
+                imprimir[0] = "Excelsior Gama Macaracuay";
+                imprimir[1] = "Excelsior Gama Vizcaya";
+                imprimir[2] = "Excelsior Gama Las Mercedes";
+                imprimir[3] = "Excelsior Gama Santa Paula";
+                imprimir[4] = "Excelsior Gama Chuao";
+                imprimir[5] = "Excelsior Gama Caurimare";
+            }
+            else if (sucursales >= 6) {
+                imprimir[0] = "Excelsior Gama Macaracuay";
+                imprimir[1] = "Excelsior Gama Vizcaya";
+                imprimir[2] = "Excelsior Gama Las Mercedes";
+                imprimir[3] = "Excelsior Gama Santa Paula";
+                imprimir[4] = "Excelsior Gama Chuao";
+                imprimir[5] = "Excelsior Gama Caurimare";
+                for (int i = 6; i < sucursales; i++) {
+                    String aux = JOptionPane.showInputDialog("Introducir nombre de la sucursal # " + (i+1) + " (P" + i + ")");
+                    imprimir[i] = aux; 
+                }
+            }
+            }
+        }
