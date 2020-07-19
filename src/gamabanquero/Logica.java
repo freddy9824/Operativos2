@@ -99,19 +99,19 @@ public class Logica {
 		return true;
 	}
 
-	public void revisarInterbloqueo() {
+	public void revisarInterbloqueo(int procesos, int recursos) {
 		//obtenerDatos();
 		//calc_need();
-		boolean done[] = new boolean[num_processes];
-                order = new int[num_processes];
+		boolean done[] = new boolean[procesos];
+                order = new int[procesos];
 		int j = 0;
 
-		while (j < num_processes) { // until all process allocated
+		while (j < procesos) { // until all process allocated
 		boolean allocated = false;
-                    for (int i = 0; i < num_processes; i++)
+                    for (int i = 0; i < procesos; i++)
                             if (!done[i] && check_allocatable(i)) { // trying to allocate
 
-                                    for (int k = 0; k < num_resources; k++)
+                                    for (int k = 0; k < recursos; k++)
                                             available_resources[0][k] = available_resources[0][k] - need[i][k] + max[i][k];
                                     System.out.println("Sucursal procesada: " + i);
                                     order[i] = i;
@@ -121,7 +121,7 @@ public class Logica {
                             if (!allocated) // no allocation
                                 break;
 		}
-		if (j == num_processes) // all processes are allocated
+		if (j == procesos) // all processes are allocated
 			JOptionPane.showMessageDialog(null,"¡EXISTE ESTADO SEGURO!","Aviso!", JOptionPane.INFORMATION_MESSAGE);
 		else
 			JOptionPane.showMessageDialog(null,"DEADLOCK","Aviso!", JOptionPane.ERROR_MESSAGE);
