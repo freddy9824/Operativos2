@@ -122,7 +122,7 @@ public class Logica {
 			System.out.println("DEADLOCK");
 	}
         public void imprimirEnInterfaz(JTextArea area, int [][] matriz) {
-            String text = "";
+            String text = "\n" + "\n" + "\n";
             for (int i = 0; i < matriz.length; i++) {
                 for (int j = 0; j < matriz[i].length; j++) {
                     text += "\t" + matriz[i][j];

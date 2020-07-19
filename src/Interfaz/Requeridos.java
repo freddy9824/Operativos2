@@ -18,6 +18,7 @@ public class Requeridos extends javax.swing.JFrame {
     public Requeridos() {
         initComponents();
         setLocationRelativeTo(this);
+        this.setTitle("Empleados Requeridos");
     }
 
     /**
