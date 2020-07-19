@@ -155,7 +155,7 @@ public class CategoriaSucursal extends javax.swing.JFrame {
         }
 
 	// Get available matrix input
-	JOptionPane.showMessageDialog(rootPane, "Por favor la cantidad requerida de empleados en cada categoría");
+	JOptionPane.showMessageDialog(rootPane, "Por favor introduzca la cantidad de empleados disponibles en cada categoría");
 	for (int j = 0; j < num_resources; j++) {
                     aux = JOptionPane.showInputDialog("Colocar número");
                     if (aux == null) {
