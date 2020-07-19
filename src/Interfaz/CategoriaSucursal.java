@@ -167,13 +167,15 @@ public class CategoriaSucursal extends javax.swing.JFrame {
               Requeridos requerido = new Requeridos();
               Iniciales inicial = new Iniciales();
               Necesario necesario = new Necesario();
+              Orden orden = new Orden();
 	logica.imprimirEnInterfaz(requerido.Disponible, logica.max);
               requerido.setVisible(true);
               logica.imprimirEnInterfaz(inicial.jTextArea1, logica.allocated_resources);
               inicial.setVisible(true);
               logica.imprimirEnInterfaz(necesario.necesario, logica.allocated_resources);
               necesario.setVisible(true);
-              
+              logica.imprimirArray(orden.jTextArea1, logica.order);
+              orden.setVisible(true);
 		
     }//GEN-LAST:event_jButton1ActionPerformed
 

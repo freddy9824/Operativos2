@@ -134,4 +134,11 @@ public class Logica {
             }
             area.setText(text);
         }
+        
+        public void imprimirArray(JTextArea area, int[] vector) {
+            String text = "\n" + "\n" + "\n";
+            for (int i = 0; i < vector.length; i++) {
+                text += "\t" + vector[i];
+            }
+        }
 }
