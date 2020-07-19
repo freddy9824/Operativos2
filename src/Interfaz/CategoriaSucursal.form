@@ -29,7 +29,7 @@
                   <Component id="jLabel2" max="32767" attributes="0"/>
                   <Component id="Categoria" max="32767" attributes="0"/>
               </Group>
-              <EmptySpace pref="34" max="32767" attributes="0"/>
+              <EmptySpace pref="16" max="32767" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
                   <Component id="Subcursales" min="-2" pref="91" max="-2" attributes="0"/>
                   <Component id="jLabel3" min="-2" max="-2" attributes="0"/>
@@ -85,7 +85,7 @@
     </Component>
     <Component class="javax.swing.JButton" name="jButton1">
       <Properties>
-        <Property name="text" type="java.lang.String" value="Siguente"/>
+        <Property name="text" type="java.lang.String" value="Siguiente"/>
       </Properties>
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButton1ActionPerformed"/>
@@ -93,12 +93,12 @@
     </Component>
     <Component class="javax.swing.JLabel" name="jLabel2">
       <Properties>
-        <Property name="text" type="java.lang.String" value="Categor&#xed;as (Columns)"/>
+        <Property name="text" type="java.lang.String" value="Categor&#xed;as (Recursos)"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JLabel" name="jLabel3">
       <Properties>
-        <Property name="text" type="java.lang.String" value="Sucursales (rows)"/>
+        <Property name="text" type="java.lang.String" value="Sucursales (Procesos)"/>
       </Properties>
     </Component>
   </SubComponents>

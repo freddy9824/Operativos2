@@ -53,16 +53,16 @@ public class CategoriaSucursal extends javax.swing.JFrame {
             }
         });
 
-        jButton1.setText("Siguente");
+        jButton1.setText("Siguiente");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton1ActionPerformed(evt);
             }
         });
 
-        jLabel2.setText("Categorías (Columns)");
+        jLabel2.setText("Categorías (Recursos)");
 
-        jLabel3.setText("Sucursales (rows)");
+        jLabel3.setText("Sucursales (Procesos)");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -73,7 +73,7 @@ public class CategoriaSucursal extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(Categoria))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 34, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 16, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(Subcursales, javax.swing.GroupLayout.PREFERRED_SIZE, 91, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel3))
@@ -124,9 +124,9 @@ public class CategoriaSucursal extends javax.swing.JFrame {
         String aux;
         JOptionPane.showMessageDialog(rootPane, "Por favor introduce la matriz de empleados asignados en cada sucursal actualmente en cada categoría");
         for (int i = 0; i < num_processes; i++) {
-            JOptionPane.showMessageDialog(rootPane, "Usted esta llenando los valores de Row " + (i + 1) + " (P" + i + "): ");
+            JOptionPane.showMessageDialog(rootPane, "Usted esta llenando los valores de la Sucursal " + (i + 1) + " (P" + i + "): ");
             for (int j = 0; j < num_resources; j++) {
-                aux = JOptionPane.showInputDialog("Colocar Numero");
+                aux = JOptionPane.showInputDialog("Colocar número");
                 if (aux == null) {
                     System.exit(0);
                 }
@@ -136,9 +136,9 @@ public class CategoriaSucursal extends javax.swing.JFrame {
         	// Get Max Matrix input
 	JOptionPane.showMessageDialog(rootPane, "Por favor introduce la matriz de empleados disponibles que puedan transportarse en cada categoría");
 	for (int i = 0; i < num_processes; i++) {
-		JOptionPane.showMessageDialog(rootPane, "Usted esta llenando los valores de Row " + (i + 1) + " (P" + i + "): ");
+		JOptionPane.showMessageDialog(rootPane, "Usted esta llenando los valores de Sucursal " + (i + 1) + " (P" + i + "): ");
 		for (int j = 0; j < num_resources; j++) {
-                                    aux = JOptionPane.showInputDialog("Colocar Numero");
+                                    aux = JOptionPane.showInputDialog("Colocar número");
                                     if (aux == null) {
                                         System.exit(0);
                                     }
@@ -149,7 +149,7 @@ public class CategoriaSucursal extends javax.swing.JFrame {
 	// Get available matrix input
 	JOptionPane.showMessageDialog(rootPane, "Por favor la cantidad requerida de empleados en cada categoría");
 	for (int j = 0; j < num_resources; j++) {
-                    aux = JOptionPane.showInputDialog("Colocar Numero");
+                    aux = JOptionPane.showInputDialog("Colocar número");
                     if (aux == null) {
                                         System.exit(0);
                     }
