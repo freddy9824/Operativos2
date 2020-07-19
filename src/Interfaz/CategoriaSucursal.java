@@ -141,7 +141,7 @@ public class CategoriaSucursal extends javax.swing.JFrame {
             }
 	}
         
-        JOptionPane.showMessageDialog(rootPane, "Por favor introduce la matriz de empleados inicales en cada categoría al abrir la sucursal");
+        JOptionPane.showMessageDialog(rootPane, "Por favor introduce la matriz de empleados iniciales en cada categoría al abrir la sucursal");
         for (int i = 0; i < num_processes; i++) {
             JOptionPane.showMessageDialog(rootPane, "Usted esta llenando los valores de la Sucursal " + (i + 1) + " (P" + i + "): ");
             for (int j = 0; j < num_resources; j++) {
