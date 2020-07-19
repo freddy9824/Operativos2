@@ -34,21 +34,21 @@ public class Logica {
 	allocated_resources = new int[num_processes][num_resources];
 	available_resources = new int[1][num_resources];
 
-	// Get Allocation input
-	System.out.println("Por favor introduce la matriz de empleados asignados en cada sucursal actualmente en cada categoría =>");
-	for (int i = 0; i < num_processes; i++) {
-		System.out.println("Row " + (i + 1) + " (P" + i + "): ");
-		for (int j = 0; j < num_resources; j++) {
-			allocated_resources[i][j] = scanner.nextInt(); // allocation matrix
-		}
-	}
-
 	// Get Max Matrix input
-	System.out.println("Por favor introduce la matriz de empleados disponibles que puedan transportarse en cada categoría => =>");
+	System.out.println("Por favor introduce la matriz de empleados requeridos en cada sucursal en cada una de sus categorías =>");
 	for (int i = 0; i < num_processes; i++) {
 		System.out.println("Row " + (i + 1) + " (P" + i + "): ");
 		for (int j = 0; j < num_resources; j++) {
 			max[i][j] = scanner.nextInt(); // max matrix
+		}
+	}
+
+        // Get Allocation input
+	System.out.println("Por favor introduce la matriz de empleados inicales en cada categoría al abrir la sucursal =>");
+	for (int i = 0; i < num_processes; i++) {
+		System.out.println("Row " + (i + 1) + " (P" + i + "): ");
+		for (int j = 0; j < num_resources; j++) {
+			allocated_resources[i][j] = scanner.nextInt(); // allocation matrix
 		}
 	}
 
@@ -60,10 +60,10 @@ public class Logica {
 	scanner.close();
 
 	// Display matrices
-                System.out.println("\nMatriz de empleados asignados en cada sucursal actualmente =>");
-	printArray(allocated_resources);
-	System.out.println("\nMatriz de empleados disponibles en cada categoría =>");
+        System.out.println("\nMatriz de empleados requeridos en cada categoría =>");
 	printArray(max);
+        System.out.println("\nMatriz de empleados asignados en cada sucursal actualmente =>");
+	printArray(allocated_resources);
 	System.out.println("\nMatriz resultante =>");
 	printArray(calc_need());
         }
