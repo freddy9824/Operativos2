@@ -162,7 +162,16 @@ public class CategoriaSucursal extends javax.swing.JFrame {
                     }
                     logica.available_resources[0][j] = Integer.parseInt(aux); // available matrix
                  }
-		
+              Requeridos requerido = new Requeridos();
+              Iniciales inicial = new Iniciales();
+              Necesario necesario = new Necesario();
+	logica.imprimirEnInterfaz(requerido.Disponible, logica.max);
+              requerido.setVisible(true);
+              logica.imprimirEnInterfaz(inicial.jTextArea1, logica.allocated_resources);
+              inicial.setVisible(true);
+              logica.imprimirEnInterfaz(necesario.necesario, logica.allocated_resources);
+              necesario.setVisible(true);
+              
 		
     }//GEN-LAST:event_jButton1ActionPerformed
 

@@ -6,6 +6,7 @@
 package gamabanquero;
 
 import java.util.Scanner;
+import javax.swing.JTextArea;
 
 /**
  *
@@ -120,4 +121,14 @@ public class Logica {
 		else
 			System.out.println("DEADLOCK");
 	}
+        public void imprimirEnInterfaz(JTextArea area, int [][] matriz) {
+            String text = "";
+            for (int i = 0; i < matriz.length; i++) {
+                for (int j = 0; j < matriz[i].length; j++) {
+                    text += "\t" + matriz[i][j];
+                }
+                text += "\t" + "\n";
+            }
+            area.setText(text);
+        }
 }
