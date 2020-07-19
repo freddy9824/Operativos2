@@ -19,6 +19,7 @@ public class Logica {
         public static int available_resources[][];
         public static int num_processes;
         public static int num_resources;
+        public static int order[];
         
         public static void obtenerDatos() {
 	Scanner scanner = new Scanner(System.in);
@@ -29,13 +30,13 @@ public class Logica {
 
 	num_resources = scanner.nextInt(); // no. of resources
 
-	// initializing arrays
+	// Inicialización de arreglos
 	need = new int[num_processes][num_resources];
 	max = new int[num_processes][num_resources];
 	allocated_resources = new int[num_processes][num_resources];
 	available_resources = new int[1][num_resources];
 
-	// Get Max Matrix input
+	// Creación de matriz de empleados requeridos
 	System.out.println("Por favor introduce la matriz de empleados requeridos en cada sucursal en cada una de sus categorías =>");
 	for (int i = 0; i < num_processes; i++) {
 		System.out.println("Row " + (i + 1) + " (P" + i + "): ");
@@ -44,7 +45,7 @@ public class Logica {
 		}
 	}
 
-        // Get Allocation input
+        // Creación de matriz de empleados iniciales
 	System.out.println("Por favor introduce la matriz de empleados inicales en cada categoría al abrir la sucursal =>");
 	for (int i = 0; i < num_processes; i++) {
 		System.out.println("Row " + (i + 1) + " (P" + i + "): ");
@@ -100,6 +101,7 @@ public class Logica {
 		obtenerDatos();
 		calc_need();
 		boolean done[] = new boolean[num_processes];
+                order = new int[num_processes];
 		int j = 0;
 
 		while (j < num_processes) { // until all process allocated
@@ -110,6 +112,7 @@ public class Logica {
                                     for (int k = 0; k < num_resources; k++)
                                             available_resources[0][k] = available_resources[0][k] - need[i][k] + max[i][k];
                                     System.out.println("Sucursal procesada: " + i);
+                                    order[i] = i;
                                     allocated = done[i] = true;
                                     j++;
                             }
