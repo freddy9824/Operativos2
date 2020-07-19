@@ -83,9 +83,9 @@ public class Logica {
         }
 
 	//
-	public int[][] calc_need() {
-		for (int i = 0; i < num_processes; i++)
-			for (int j = 0; j < num_resources; j++)
+	public static int[][] calc_need(int procesos, int recursos) {
+		for (int i = 0; i < procesos; i++)
+			for (int j = 0; j < recursos; j++)
 				// calculating need matrix
 				need[i][j] = max[i][j] - allocated_resources[i][j];
 		return need;
