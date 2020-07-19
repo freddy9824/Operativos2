@@ -164,11 +164,14 @@ public class CategoriaSucursal extends javax.swing.JFrame {
                     }
                     logica.available_resources[0][j] = Integer.parseInt(aux); // available matrix
                  }
+        
+              logica.need = logica.calc_need();
+              
               Requeridos requerido = new Requeridos();
               Iniciales inicial = new Iniciales();
               Necesario necesario = new Necesario();
               Orden orden = new Orden();
-	logica.imprimirEnInterfaz(requerido.Disponible, logica.max);
+              logica.imprimirEnInterfaz(requerido.Disponible, logica.max);
               requerido.setVisible(true);
               logica.imprimirEnInterfaz(inicial.jTextArea1, logica.allocated_resources);
               inicial.setVisible(true);
@@ -176,7 +179,7 @@ public class CategoriaSucursal extends javax.swing.JFrame {
               necesario.setVisible(true);
               logica.imprimirArray(orden.jTextArea1, logica.order);
               orden.setVisible(true);
-	logica.revisarInterbloqueo();	
+              logica.revisarInterbloqueo();	
     }//GEN-LAST:event_jButton1ActionPerformed
 
     /**

@@ -68,7 +68,7 @@ public class Logica {
         System.out.println("\nMatriz de empleados asignados en cada sucursal actualmente =>");
 	printArray(allocated_resources);
 	System.out.println("\nMatriz resultante =>");
-	printArray(calc_need());
+	//printArray(calc_need());
         }
 	
         public static void printArray(int[][] array) {
@@ -82,7 +82,7 @@ public class Logica {
         }
 
 	//
-	public static int[][] calc_need() {
+	public int[][] calc_need() {
 		for (int i = 0; i < num_processes; i++)
 			for (int j = 0; j < num_resources; j++)
 				// calculating need matrix
@@ -99,8 +99,8 @@ public class Logica {
 	}
 
 	public void revisarInterbloqueo() {
-		obtenerDatos();
-		calc_need();
+		//obtenerDatos();
+		//calc_need();
 		boolean done[] = new boolean[num_processes];
                 order = new int[num_processes];
 		int j = 0;
