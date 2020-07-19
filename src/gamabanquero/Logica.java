@@ -137,15 +137,16 @@ public class Logica {
             area.setText(text);
         }
         
-        public void imprimirArray(JTextArea area,int[]vector ,String[]vector2) {
+        public void imprimirArray(JTextArea area, String[]vector2) {
             String text = "\n" + "\n" + "\n";
-            for (int i = 0; i < vector.length; i++) {
+            /* for (int i = 0; i < vector.length; i++) {
                 text += "\t" + vector[i];
-            }
+            } */
             text += "\n" + "\n" + "Leyenda: ";
             for (int i = 0; i < vector2.length; i++) {
                 text +=  "\n" + vector2[i];
             }
+            area.setText(text);
         }
         
         public void imprimirSucursales(int sucursales, String[] imprimir) {
