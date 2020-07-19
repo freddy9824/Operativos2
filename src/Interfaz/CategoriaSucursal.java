@@ -47,11 +47,14 @@ public class CategoriaSucursal extends javax.swing.JFrame {
 
         jLabel1.setText("Matriz Categoría / Sucursal");
 
+        Categoria.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         Categoria.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 CategoriaActionPerformed(evt);
             }
         });
+
+        Subcursales.setHorizontalAlignment(javax.swing.JTextField.CENTER);
 
         jButton1.setText("Siguiente");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
@@ -79,13 +82,14 @@ public class CategoriaSucursal extends javax.swing.JFrame {
                     .addComponent(jLabel3))
                 .addGap(36, 36, 36))
             .addGroup(layout.createSequentialGroup()
-                .addGap(97, 97, 97)
-                .addComponent(jButton1)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(97, 97, 97)
+                        .addComponent(jButton1))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(73, 73, 73)
+                        .addComponent(jLabel1)))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jLabel1)
-                .addGap(66, 66, 66))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -128,6 +132,7 @@ public class CategoriaSucursal extends javax.swing.JFrame {
             for (int j = 0; j < num_resources; j++) {
                 aux = JOptionPane.showInputDialog("Colocar número");
                 if (aux == null) {
+                    JOptionPane.showMessageDialog(null, "Recuadro Vacio o Presionado Botón cancelar, se ha iniciado el cierre del programa", "Aviso!", JOptionPane.ERROR_MESSAGE);
                     System.exit(0);
                 }
                 logica.allocated_resources[i][j] = Integer.parseInt(aux); // allocation matrix
@@ -140,6 +145,7 @@ public class CategoriaSucursal extends javax.swing.JFrame {
 		for (int j = 0; j < num_resources; j++) {
                                     aux = JOptionPane.showInputDialog("Colocar número");
                                     if (aux == null) {
+                                        JOptionPane.showMessageDialog(null, "Recuadro Vacio o Presionado Botón cancelar, se ha iniciado el cierre del programa", "Aviso!", JOptionPane.ERROR_MESSAGE);
                                         System.exit(0);
                                     }
                                     logica.max[i][j] = Integer.parseInt(aux); // max matrix
@@ -151,7 +157,8 @@ public class CategoriaSucursal extends javax.swing.JFrame {
 	for (int j = 0; j < num_resources; j++) {
                     aux = JOptionPane.showInputDialog("Colocar número");
                     if (aux == null) {
-                                        System.exit(0);
+                        JOptionPane.showMessageDialog(null, "Recuadro Vacio o Presionado Botón cancelar, se ha iniciado el cierre del programa", "Aviso!", JOptionPane.ERROR_MESSAGE);
+                         System.exit(0);
                     }
                     logica.available_resources[0][j] = Integer.parseInt(aux); // available matrix
                  }
